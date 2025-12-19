@@ -4,6 +4,7 @@ import (
 	"glitechnicaltest/models"
 	"glitechnicaltest/services"
 	"net/http"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -64,9 +65,7 @@ func (h *AtkController) Update(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"data":    res,
-	})
+	c.JSON(http.StatusOK,res)
 }
 
 func (h *AtkController) Delete(c *gin.Context) {
