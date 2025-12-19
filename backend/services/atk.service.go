@@ -23,8 +23,8 @@ func NewService(repo repositories.ATKRepository) *service {
 }
 
 func (s *service) Create(atk models.ATK) (models.ATK, error) {
-	if atk.Qty < 0 {
-		return atk, errors.New("qty tidak boleh negatif")
+	if atk.Qty <= 0 {
+		return atk, errors.New("qty harus angka positif")
 	}
 	return s.repo.Create(atk)
 }
